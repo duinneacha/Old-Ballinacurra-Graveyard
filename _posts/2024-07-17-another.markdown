@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Lovely Walk"
-date: 2024-07-17 00:33:35 +0100
+date: 2024-07-17
 categories: blog
 ---
 

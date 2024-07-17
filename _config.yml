@@ -27,3 +27,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - desktop.ini # Add this line to exclude desktop.ini
+
+# http://localhost:4000/Old-Ballinacurra-Graveyard/2024/07/16/welcome-to-jekyll.html

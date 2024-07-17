@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Welcome to Jekyll"
-date: 2024-07-16 00:33:35 +0100
+date: 2024-07-16
 categories: blog
 ---
 

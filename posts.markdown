@@ -10,7 +10,7 @@ permalink: /posts/
   {% for post in site.posts %}
     <li>
       <!-- Link to the post's URL and display the post's title -->
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <!-- Display the post's date in "Month Day, Year" format -->
       <small>{{ post.date | date: "%B %d, %Y" }}</small>
     </li>
