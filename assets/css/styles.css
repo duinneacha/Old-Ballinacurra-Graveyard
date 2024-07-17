@@ -178,8 +178,31 @@ h1 {
     z-index: 10;
 }
 
+.map-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+}
+
+#main-map {
+    width: 100%;
+    height: auto;
+}
+
 .shade {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.3);
-    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+#info-box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    display: none;
+    z-index: 10;
 }

@@ -29,36 +29,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // This is for the map on the graves page
-document.addEventListener('DOMContentLoaded', () => {
-  const mapAreas = document.querySelectorAll('area');
-  const shadedAreas = document.querySelectorAll('.shade');
-  const infoBox = document.getElementById('info-box');
+// document.addEventListener('DOMContentLoaded', () => {
+//   const mapAreas = document.querySelectorAll('area');
+//   const shadedAreas = document.querySelectorAll('.shade');
+//   const infoBox = document.getElementById('info-box');
 
-  const showInfoBox = (event, info) => {
-    const rect = event.target.getBoundingClientRect();
-    infoBox.textContent = info;
-    infoBox.style.left = `${rect.left + window.scrollX}px`;
-    infoBox.style.top = `${rect.top + window.scrollY - infoBox.offsetHeight}px`;
-    infoBox.style.display = 'block';
-  };
+//   const showInfoBox = (event, info) => {
+//     const rect = event.target.getBoundingClientRect();
+//     infoBox.textContent = info;
+//     infoBox.style.left = `${rect.left + window.scrollX}px`;
+//     infoBox.style.top = `${rect.top + window.scrollY - infoBox.offsetHeight}px`;
+//     infoBox.style.display = 'block';
+//   };
 
-  const hideInfoBox = () => {
-    infoBox.style.display = 'none';
-  };
+//   const hideInfoBox = () => {
+//     infoBox.style.display = 'none';
+//   };
 
-  mapAreas.forEach(area => {
-    area.addEventListener('mouseover', (event) => {
-      showInfoBox(event, event.target.getAttribute('data-info'));
-    });
+//   mapAreas.forEach(area => {
+//     area.addEventListener('mouseover', (event) => {
+//       showInfoBox(event, event.target.getAttribute('data-info'));
+//     });
 
-    area.addEventListener('mouseout', hideInfoBox);
+//     area.addEventListener('mouseout', hideInfoBox);
+//   });
+
+//   shadedAreas.forEach(shade => {
+//     shade.addEventListener('mouseover', (event) => {
+//       showInfoBox(event, event.target.getAttribute('data-info'));
+//     });
+
+//     shade.addEventListener('mouseout', hideInfoBox);
+//   });
+// });
+
+
+document.querySelectorAll('.shade').forEach(function(shade) {
+  shade.addEventListener('mouseover', function() {
+    showInfoBox(shade);
   });
 
-  shadedAreas.forEach(shade => {
-    shade.addEventListener('mouseover', (event) => {
-      showInfoBox(event, event.target.getAttribute('data-info'));
-    });
+  shade.addEventListener('mouseout', function() {
+    hideInfoBox();
+  });
 
-    shade.addEventListener('mouseout', hideInfoBox);
+  shade.addEventListener('click', function() {
+    showInfoBox(shade);
   });
 });
+
+function showInfoBox(shade) {
+  const infoBox = document.getElementById('info-box');
+  infoBox.style.display = 'block';
+  infoBox.innerHTML = shade.getAttribute('data-info');
+  infoBox.style.top = (shade.offsetTop + shade.offsetHeight) + 'px';
+  infoBox.style.left = shade.offsetLeft + 'px';
+}
+
+function hideInfoBox() {
+  const infoBox = document.getElementById('info-box');
+  infoBox.style.display = 'none';
+}
