@@ -1,0 +1,10 @@
+---
+layout: post
+title: "A Lovely Walk"
+date: 2024-07-17 00:33:35 +0100
+categories: blog
+---
+
+# This Blog Post came from the third file
+
+A lovely place to have a walk
