@@ -127,22 +127,22 @@ h1 {
 .home-search {
     text-align: center;
     margin: 2rem 0;
-  }
-  
-  #search-form {
+}
+
+#search-form {
     display: inline-block;
-  }
-  
-  #search-input {
+}
+
+#search-input {
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #006400; /* Dark Green border */
     border-radius: 5px;
     margin-right: 0.5rem;
-  }
-  
-  #find-button,
-  #reset-button {
+}
+
+#find-button,
+#reset-button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     color: #ffffff; /* White text */
@@ -151,10 +151,35 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     margin-right: 0.5rem;
-  }
-  
-  #find-button:hover,
-  #reset-button:hover {
+}
+
+#find-button:hover,
+#reset-button:hover {
     background-color: #004d00; /* Darker Green on hover */
-  }
-  
+}
+
+.map-container {
+    position: relative;
+}
+
+#main-map {
+    width: 100%;
+    height: auto;
+}
+
+#info-box {
+    position: absolute;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #000;
+    padding: 10px;
+    max-width: 200px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.shade {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}

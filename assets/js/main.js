@@ -1,3 +1,5 @@
+
+// This is for the map on the about page
 document.addEventListener('DOMContentLoaded', function() {
     var mapContainer = document.getElementById('map');
     if (mapContainer) {
@@ -23,4 +25,40 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
-  
+
+
+
+// This is for the map on the graves page
+document.addEventListener('DOMContentLoaded', () => {
+  const mapAreas = document.querySelectorAll('area');
+  const shadedAreas = document.querySelectorAll('.shade');
+  const infoBox = document.getElementById('info-box');
+
+  const showInfoBox = (event, info) => {
+    const rect = event.target.getBoundingClientRect();
+    infoBox.textContent = info;
+    infoBox.style.left = `${rect.left + window.scrollX}px`;
+    infoBox.style.top = `${rect.top + window.scrollY - infoBox.offsetHeight}px`;
+    infoBox.style.display = 'block';
+  };
+
+  const hideInfoBox = () => {
+    infoBox.style.display = 'none';
+  };
+
+  mapAreas.forEach(area => {
+    area.addEventListener('mouseover', (event) => {
+      showInfoBox(event, event.target.getAttribute('data-info'));
+    });
+
+    area.addEventListener('mouseout', hideInfoBox);
+  });
+
+  shadedAreas.forEach(shade => {
+    shade.addEventListener('mouseover', (event) => {
+      showInfoBox(event, event.target.getAttribute('data-info'));
+    });
+
+    shade.addEventListener('mouseout', hideInfoBox);
+  });
+});
