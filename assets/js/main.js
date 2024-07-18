@@ -90,3 +90,5 @@ function hideInfoBox() {
   const infoBox = document.getElementById('info-box');
   infoBox.style.display = 'none';
 }
+
+

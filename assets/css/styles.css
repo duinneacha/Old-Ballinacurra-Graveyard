@@ -206,3 +206,42 @@ h1 {
     display: none;
     z-index: 10;
 }
+
+
+.view-toggle {
+    margin-bottom: 20px;
+  }
+  
+  .view-toggle button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .view {
+    display: none;
+  }
+  
+  #map-view {
+    display: block;
+  }
+
+
+  #table-container, #map-container {
+    display: none;
+}
+
+#table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#table-container th, #table-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table-container th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
