@@ -7,6 +7,7 @@ baseurl: "/Old-Ballinacurra-Graveyard" # the subpath of your site
 url: "https://duinneacha.github.io" # the base hostname & protocol for your site
 twitter_username:
 github_username: duinneacha
+facebook_url: https://www.facebook.com/your-facebook-page/BallinacurraGraveyard/
 
 # Build settings
 theme: minima
