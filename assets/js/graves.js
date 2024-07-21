@@ -1,6 +1,8 @@
 document.getElementById('table-view-btn').addEventListener('click', showTableView);
 document.getElementById('map-view-btn').addEventListener('click', showMapView);
 
+// const dataUrl = '/assets/data/vip_graves_list.txt';
+
 function showTableView() {
     document.getElementById('map-view').style.display = 'none';
     document.getElementById('table-view').style.display = 'block';
@@ -41,3 +43,32 @@ function loadTableData() {
             tableBody.innerHTML = '<tr><td colspan="2">Error loading data</td></tr>';
         });
 }
+
+
+// document.getElementById('search-input').addEventListener('input', function() {
+//     const filter = this.value.toLowerCase();
+//     const rows = document.querySelectorAll('#graves-tbody tr');
+//     console.log(rows);
+
+//     rows.forEach(row => {
+//         const cells = row.querySelectorAll('td');
+//         const match = Array.from(cells).some(cell => cell.textContent.toLowerCase().includes(filter));
+//         row.style.display = match ? '' : 'none';
+//     });
+// });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('search-input').addEventListener('input', function() {
+        const filter = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#graves-table tbody tr'); // Ensure correct selector
+        console.log(rows);
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            const match = Array.from(cells).some(cell => cell.textContent.toLowerCase().includes(filter));
+            row.style.display = match ? '' : 'none';
+        });
+    });
+});

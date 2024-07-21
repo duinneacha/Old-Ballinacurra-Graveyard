@@ -5,11 +5,3 @@
 layout: default
 title: Home
 ---
-
-<div class="home-search">
-    <form id="search-form">
-    <input type="text" id="search-input" placeholder="Search...">
-    <button type="button" id="find-button">Find</button>
-    <button type="button" id="reset-button">Reset</button>
-    </form>
-</div>

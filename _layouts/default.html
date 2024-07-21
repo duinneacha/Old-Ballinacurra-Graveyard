@@ -33,40 +33,48 @@
       position: relative;
       z-index: 2;
     }
+
+    .container {
+  max-width: 1200px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+  padding: 0 20px; /* Optional padding for some spacing */
+  min-height: 100%; /* Ensure the container takes at least 100% height */
+  display: flex;
+  flex-direction: column;
+}
   </style>
 </head>
 <body>
-  <header>
-    <h1>{{ site.title }}</h1>
-    <nav>
-      <ul>
-        <li><a href="{{ site.baseurl }}/">Home</a></li>
-        <li><a href="{{ site.baseurl }}/graves">Graves</a></li>
-        <li><a href="{{ site.baseurl }}/about">About</a></li>
-        <li><a href="{{ site.baseurl }}/posts">Posts</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <div class="welcome-banner">
-      <h2>Explore the graves of the Old Ballinacurra Graveyard</h2>
-    </div>
-    
-    {{ content }}
-
-
-  </main>
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-    <div class="social-buttons">
-      <a href="https://www.facebook.com/BallinacurraGraveyard/" target="_blank">
-      <img src="{{ '/assets/imgs/facebook.png' | relative_url }}" alt="Facebook">
-      </a>
-    </div>
-
-
+  <div class="container">
+    <header>
+      <h1>{{ site.title }}</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ site.baseurl }}/">Home</a></li>
+          <li><a href="{{ site.baseurl }}/graves">Graves</a></li>
+          <li><a href="{{ site.baseurl }}/about">About</a></li>
+          <li><a href="{{ site.baseurl }}/posts">Posts</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      
+      {{ content }}
+      
+      
+    </main>
+    <footer>
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+      <div class="social-buttons">
+        <a href="https://www.facebook.com/BallinacurraGraveyard/" target="_blank">
+          <img src="{{ '/assets/imgs/facebook.png' | relative_url }}" alt="Facebook">
+        </a>
+      </div>
+      
+      
     </div>
   </footer>
+</div>
 </body>
 </html>
 

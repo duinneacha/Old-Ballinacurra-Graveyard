@@ -1,12 +1,33 @@
 /* General Styles */
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* White background */
+}
+
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #ffffff; /* White background */
+}
+
+/* Define CSS variables for consistency */
+:root {
+    --container-max-width: 1200px;
+    --container-padding: 20px;
+}
+
+/* Container Styles */
+.container {
+    max-width: var(--container-max-width); /* Use CSS variable for max-width */
+    width: 100%; /* Ensure the container takes full width up to the max-width */
+    margin: 0 auto;
+    padding: 0 var(--container-padding); /* Use CSS variable for padding */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header and Footer Styles */
@@ -20,7 +41,6 @@ header, footer {
 header h1 {
     margin: 0; /* Ensure there is no margin around the header title */
     font-size: 2rem; /* Adjust font size as needed */
-    color: #ffffff; /* Ensure the header title is white */
 }
 
 /* Navigation Styles */
@@ -51,14 +71,6 @@ nav ul li a:hover {
     text-align: center;
     max-width: 80%; /* Limit the width of the banner */
     background-color: rgba(0, 100, 0, 0.1); /* Light green background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    border-radius: 10px; /* Rounded corners */
-}
-
-.welcome-banner h2 {
-    color: #006400; /* Dark Green text */
-    margin: 0;
-    font-size: 2rem;
 }
 
 /* Main Content Styles */
@@ -66,8 +78,9 @@ main {
     flex: 1;
     padding: 2rem;
     color: #006400; /* Dark Green text */
+    background: url('{{ "/assets/imgs/churchruin.png" | relative_url }}') no-repeat center center;
+    background-size: cover;
     position: relative;
-    z-index: 2;
 }
 
 main::before {
@@ -77,199 +90,21 @@ main::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('/assets/imgs/ChurchRuin.PNG') no-repeat center center;
-    background-size: cover;
-    opacity: 0.95; /* Adjust opacity as needed */
-    z-index: -1; /* Ensure the overlay is behind the content */
+    background: rgba(255, 255, 255, 0.8); /* White overlay with high opacity */
+    z-index: 1;
 }
-
-/* Map Styles */
-#map {
-    height: 500px;
-    margin: 2rem auto;
-    border: 2px solid #006400; /* Dark Green border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    border-radius: 10px; /* Rounded corners */
-    max-width: 80%; /* Limit the width of the map */
-}
-
-/* Footer Styles */
-footer {
-    background: #006400; /* Dark Green */
-    color: #ffffff; /* White text */
-    padding: 1rem;
-    text-align: center;
-}
-
-/* Link Styles */
-a {
-    color: #006400; /* Dark Green links */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Additional Styling */
-h1, h2, h3, h4, h5, h6 {
-    color: #006400; /* Dark Green headings */
-    margin-top: 0; /* Ensure there is no extra margin at the top of headings */
-}
-
-h1 {
-    font-size: 2.5rem; /* Ensure h1 headings are large and visible */
-    margin-bottom: 1rem; /* Add some space below h1 headings */
-}
-
-
-/* Home Search Styles */
-.home-search {
-    text-align: center;
-    margin: 2rem 0;
-}
-
-#search-form {
-    display: inline-block;
-}
-
-#search-input {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #006400; /* Dark Green border */
-    border-radius: 5px;
-    margin-right: 0.5rem;
-}
-
-#find-button,
-#reset-button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: #ffffff; /* White text */
-    background-color: #006400; /* Dark Green background */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 0.5rem;
-}
-
-#find-button:hover,
-#reset-button:hover {
-    background-color: #004d00; /* Darker Green on hover */
-}
-
-.map-container {
-    position: relative;
-}
-
-#main-map {
-    width: 100%;
-    height: auto;
-}
-
-#info-box {
-    position: absolute;
-    display: none;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #000;
-    padding: 10px;
-    max-width: 200px;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.map-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: 800px; /* Adjust as needed */
-}
-
-#main-map {
-    width: 100%;
-    height: auto;
-}
-
-.shade {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
-
-#info-box {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: white;
-    padding: 10px;
-    border: 1px solid black;
-    display: none;
-    z-index: 10;
-}
-
-
-.view-toggle {
-    margin-bottom: 20px;
-  }
-  
-  .view-toggle button {
-    margin-right: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .view {
-    display: none;
-  }
-  
-  #map-view {
-    display: block;
-  }
-
-
-  #table-container, #map-container {
-    display: none;
-}
-
-#table-container table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-#table-container th, #table-container td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-#table-container th {
-    background-color: #f2f2f2;
-    text-align: left;
-}
-
-
 
 main > * {
     position: relative;
     z-index: 2;
 }
 
-  /* Footer Styles */
-footer {
-    background: #006400; /* Dark Green */
-    color: #ffffff; /* White text */
-    padding: 1rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Footer Social Buttons */
+.social-buttons a {
+    margin: 0 0.5rem;
 }
 
-.social-buttons {
-    margin-left: 1rem;
-}
-
-.social-buttons a img {
-    width: 60px;
-    height: 30px;
-    vertical-align: middle;
+.social-buttons img {
+    width: 24px;
+    height: 24px;
 }
