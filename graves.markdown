@@ -34,12 +34,12 @@ show_title: false
 <div id="table-view" class="view" style="display: none;">
   <div class="table-container">
     <table id="graves-table">
-      <thead>
+      <!-- <thead>
         <tr>
           <th>Grave ID</th>
           <th>Information</th>
         </tr>
-      </thead>
+      </thead> -->
       <tbody>
         <!-- Table content will be dynamically generated -->
       </tbody>

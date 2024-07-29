@@ -26,14 +26,14 @@ ID	Grave Code	Surname	First Name	Died	Age	Alias	Location	Lat	Long	Check	Married	
 25	B 03	Collins	William	15/08/1843	18		Midleton Park	51.897659722222	8.1737497222222				Male
 26	B 04	Collins	Maurice					51.897575379867	8.1736832900049				Male
 27	B 04	Collins	Johannah					51.897575379867	8.1736832900049				Female
-28	B 04	Collins	"""My Brother"""					51.897575379867	8.1736832900049				Male
-29	B 04	Collins	"""My Sisters"""					51.897575379867	8.1736832900049				Female
-30	B 04	Collins	"""My Sisters"""					51.897575379867	8.1736832900049				Female
+28	B 04	Collins	"My Brother"					51.897575379867	8.1736832900049				Male
+29	B 04	Collins	"My Sisters"					51.897575379867	8.1736832900049				Female
+30	B 04	Collins	"My Sisters"					51.897575379867	8.1736832900049				Female
 31	A 12	Terry	Patrick	04/03/1825	70		Ballynametagh	51.897625	8.1737266666667				Male
 32	A 15	Terry	John	26/10/1829	70		Ballingaran	51.897636388889	8.1737097222222				Male
 33	A 15	Terry	Mary	08/10/1835	35			51.897636388889	8.1737097222222				Female
-34	A 13	Barry	"""Mother"""	01/03/1871	53		Midleton	51.897648199876	8.1739085899972				Female
-35	A 13	Barry	"""Father"""	04/12/1891	84		Midleton	51.897648199876	8.1739085899972				Male
+34	A 13	Barry	"Mother"	01/03/1871	53		Midleton	51.897648199876	8.1739085899972				Female
+35	A 13	Barry	"Father"	04/12/1891	84		Midleton	51.897648199876	8.1739085899972				Male
 36	A 16	Harte	Elizebeth	06/11/1871	13		Ballinacurra	51.897681388889	8.1738733333333				Female
 37	A 16	Harte	Martha	03/06/1883	26			51.897681388889	8.1738733333333				Female
 38	A 14	Shelton Agar	Mary Elizebeth	30             /11/1878	33			51.897691388889	8.1739716666667				Female
@@ -235,9 +235,9 @@ ID	Grave Code	Surname	First Name	Died	Age	Alias	Location	Lat	Long	Check	Married	
 234	G 03	Murphy	Ellen	26/12/1866				51.897716388889	8.1734280555556				Female
 235	G 04	Gorman	William	08/11/1803	33			51.897748055556	8.1734380555556				Male
 236	G 04	Gorman	Maurice	09/04/1791	78			51.897748055556	8.1734380555556				Male
-237	G 04	Gorman	"""Mother"""					51.897748055556	8.1734380555556				Female
-238	G 04	Gorman	"""Sister """					51.897748055556	8.1734380555556				Female
-239	G 04	Gorman	"""Sister"""					51.897748055556	8.1734380555556				Female
+237	G 04	Gorman	"Mother"					51.897748055556	8.1734380555556				Female
+238	G 04	Gorman	"Sister "					51.897748055556	8.1734380555556				Female
+239	G 04	Gorman	"Sister"					51.897748055556	8.1734380555556				Female
 240	G 05	Burke	James	??/??/1769	55			51.897725	8.1735213888889				Male
 241	G 05	Burke	William					51.897725	8.1735213888889				Male
 242	G 05	Burke	Family					51.897725	8.1735213888889				nan
@@ -307,9 +307,9 @@ ID	Grave Code	Surname	First Name	Died	Age	Alias	Location	Lat	Long	Check	Married	
 306	G 06	Bourke	Julian	02/11/1790	15			51.89785344001	8.1737852099591				Female
 307	G 06	Bourke	Thomas					51.89785344001	8.1737852099591				Male
 308	G 06	Bourke	Family					51.89785344001	8.1737852099591				nan
-309	D 09	White	"""Child"""				Burgess	51.897743333333	8.1736516666667				nan
-310	D 09	White	"""Child"""				Burgess	51.897743333333	8.1736516666667				nan
-311	D 09	White	"""Child"""				Burgess	51.897743333333	8.1736516666667				nan
+309	D 09	White	"Child"				Burgess	51.897743333333	8.1736516666667				nan
+310	D 09	White	"Child"				Burgess	51.897743333333	8.1736516666667				nan
+311	D 09	White	"Child"				Burgess	51.897743333333	8.1736516666667				nan
 312	A 19	McCarthy	Family				Gurtenina	51.897726388889	8.173845				nan
 313	A 14	Rumley	Frederick George	05/12/1878	68			51.897691388889	8.1739716666667				Male
 314	U 02	Barret	Bartholemew	23/11/1931									Male
