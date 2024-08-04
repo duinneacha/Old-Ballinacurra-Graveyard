@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
 }
 
 body {
@@ -21,10 +21,10 @@ body {
 
 /* Container Styles */
 .container {
-    max-width: var(--container-max-width); /* Use CSS variable for max-width */
-    width: 100%; /* Ensure the container takes full width up to the max-width */
+    max-width: var(--container-max-width);
+    width: 100%;
     margin: 0 auto;
-    padding: 0 var(--container-padding); /* Use CSS variable for padding */
+    padding: 0 var(--container-padding);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -32,15 +32,15 @@ body {
 
 /* Header and Footer Styles */
 header, footer {
-    background: #006400; /* Dark Green */
-    color: #ffffff; /* White text */
+    background: #006400;
+    color: #ffffff;
     padding: 1rem;
     text-align: center;
 }
 
 header h1 {
-    margin: 0; /* Ensure there is no margin around the header title */
-    font-size: 2rem; /* Adjust font size as needed */
+    margin: 0;
+    font-size: 2rem;
 }
 
 /* Navigation Styles */
@@ -55,7 +55,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff; /* White links */
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -65,14 +65,13 @@ nav ul li a:hover {
 
 /* Welcome Banner Styles */
 .welcome-banner {
-    border: 2px solid #006400; /* Dark Green border */
+    border: 2px solid #006400;
     padding: 1rem;
     margin: 2rem auto;
     text-align: center;
-    max-width: 80%; /* Limit the width of the banner */
-    background-color: rgba(0, 100, 0, 0.1); /* Light green background */
+    max-width: 80%;
+    background-color: rgba(0, 100, 0, 0.1);
 }
-
 
 /* Footer Social Buttons */
 .social-buttons a {
@@ -82,4 +81,123 @@ nav ul li a:hover {
 .social-buttons img {
     width: 24px;
     height: 24px;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Main content styles */
+main {
+    flex: 1;
+    padding: 2rem;
+    color: #006400;
+    background: url('{{ "/assets/imgs/churchruin.png" | relative_url }}') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+}
+
+main > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    /* Container adjustments */
+    .container {
+        padding: 0;
+    }
+
+    /* Header adjustments */
+    header {
+        padding: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Navigation adjustments for mobile */
+    nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #006400;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+        flex: 1;
+        display: flex;
+    }
+
+    nav ul li a {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 5px;
+        text-align: center;
+        background: #00a000; /* Brighter green for better contrast */
+        color: #ffffff;
+        border-radius: 5px;
+        margin: 0 2px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Add shadow for depth */
+        transition: background-color 0.3s, transform 0.1s;
+    }
+
+    nav ul li a:hover, nav ul li a:active {
+        background-color: #00c000; /* Even brighter on hover/active */
+        transform: translateY(1px); /* Slight push effect */
+    }
+
+    /* Adjust main content to account for fixed bottom nav */
+    main {
+        padding-bottom: 80px; /* Increased to account for larger buttons */
+    }
+
+    /* Welcome Banner adjustments */
+    .welcome-banner {
+        max-width: 95%;
+        margin: 1rem auto;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 0.5rem;
+        padding-bottom: 80px; /* Increased to account for larger buttons */
+    }
+
+    .social-buttons img {
+        width: 20px;
+        height: 20px;
+    }
 }
