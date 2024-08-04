@@ -73,31 +73,6 @@ nav ul li a:hover {
     background-color: rgba(0, 100, 0, 0.1); /* Light green background */
 }
 
-/* Main Content Styles */
-main {
-    flex: 1;
-    padding: 2rem;
-    color: #006400; /* Dark Green text */
-    background: url('{{ "/assets/imgs/churchruin.png" | relative_url }}') no-repeat center center;
-    background-size: cover;
-    position: relative;
-}
-
-main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.8); /* White overlay with high opacity */
-    z-index: 1;
-}
-
-main > * {
-    position: relative;
-    z-index: 2;
-}
 
 /* Footer Social Buttons */
 .social-buttons a {
