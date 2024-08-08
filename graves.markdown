@@ -17,11 +17,11 @@ show_title: false
 </div>
 
 <div class="view-toggle">
-  <button id="map-view-btn">Map View</button>
   <button id="table-view-btn">Table View</button>
+  <button id="map-view-btn">Map View</button>
 </div>
 
-<div id="map-view" class="view">
+<div id="map-view" class="view" style="display: none;">
   <div class="map-container">
     <img src="{{ '/assets/imgs/grave-map-worked.jpg' | relative_url }}" alt="Map" id="main-map">
     <div class="shade" style="left: 50px; top: 50px; width: 70px; height: 50px;" data-info="Information about Area 1"></div>
@@ -31,15 +31,15 @@ show_title: false
   </div>
 </div>
 
-<div id="table-view" class="view" style="display: none;">
+<div id="table-view" class="view">
   <div class="table-container">
     <table id="graves-table">
-      <!-- <thead>
+      <thead>
         <tr>
           <th>Grave ID</th>
           <th>Information</th>
         </tr>
-      </thead> -->
+      </thead>
       <tbody>
         <!-- Table content will be dynamically generated -->
       </tbody>
