@@ -10,25 +10,9 @@ show_title: false
 </div>
 
 <div class="home-search">
-    <form id="search-form">
+  <form id="search-form">
     <input type="text" id="search-input" placeholder="Search...">
-    <!-- <button type="button" id="find-button">Find</button> -->
-    </form>
-</div>
-
-<div class="view-toggle">
-  <button id="table-view-btn">Table View</button>
-  <button id="map-view-btn">Map View</button>
-</div>
-
-<div id="map-view" class="view" style="display: none;">
-  <div class="map-container">
-    <img src="{{ '/assets/imgs/grave-map-worked.jpg' | relative_url }}" alt="Map" id="main-map">
-    <div class="shade" style="left: 50px; top: 50px; width: 70px; height: 50px;" data-info="Information about Area 1"></div>
-    <div class="shade" style="left: 200px; top: 200px; width: 70px; height: 50px;" data-info="Information about Area 2"></div>
-    <!-- Add more shaded divs as needed -->
-    <div id="info-box"></div>
-  </div>
+  </form>
 </div>
 
 <div id="table-view" class="view">
@@ -48,89 +32,37 @@ show_title: false
 </div>
 
 <style>
-  /* Search  */
+  body {
+    font-family: 'Georgia', serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
+  .welcome-banner {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .welcome-banner h2 {
+    font-size: 1.8em;
+    color: #4a4a4a;
+  }
+
   .home-search {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: center;
   }
 
   .home-search input[type="text"] {
     padding: 10px;
     font-size: 16px;
-    width: calc(100% - 20px);
+    width: calc(100% - 22px);
     max-width: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    background-color: #f9f9f9;
   }
 
-  .home-search button {
-    background-color: #006400;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-
-  .view-toggle {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .view-toggle button {
-    background-color: #006400;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    flex: 1;
-    max-width: 150px;
-  }
-
-  .view-toggle button:hover {
-    background-color: #004d00;
-  }
-
-  /* Map Container */
-  .map-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  #main-map {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .shade {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-  }
-
-  #info-box {
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: none;
-    max-width: 80%;
-    word-wrap: break-word;
-  }
-
-  /* Table Container */
   .table-container {
     width: 100%;
     overflow-x: auto;
@@ -138,59 +70,50 @@ show_title: false
 
   #graves-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 20px 0;
-    font-size: 0.9em;
-    font-family: 'Arial', sans-serif;
-    min-width: 300px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-size: 0.95em;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
   }
 
-  #graves-table th, #graves-table td {
-    padding: 10px 12px;
-    border: 1px solid #ccc;
+  #graves-table th,
+  #graves-table td {
+    padding: 12px 15px;
     text-align: left;
+    border-bottom: 1px solid #e0e0e0;
   }
 
   #graves-table thead tr {
-    background-color: #009879;
+    background-color: #4a4a4a;
     color: #ffffff;
-    text-align: left;
   }
 
-  #graves-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+  #graves-table th {
+    font-weight: bold;
   }
 
-  #graves-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+  #graves-table tbody tr:hover {
+    background-color: #f1f1f1;
   }
 
-  /* Responsive adjustments */
   @media screen and (max-width: 768px) {
-    .home-search input[type="text"] {
-      width: calc(100% - 20px);
-      margin-right: 0;
-    }
-
-    .view-toggle button {
-      width: calc(50% - 10px);
-      margin: 5px;
+    .welcome-banner h2 {
+      font-size: 1.4em;
     }
 
     #graves-table {
-      font-size: 0.8em;
+      font-size: 0.85em;
     }
 
-    #graves-table th, #graves-table td {
-      padding: 6px 8px;
-    }
-
-    .welcome-banner h2 {
-      font-size: 1.2em;
+    #graves-table th,
+    #graves-table td {
+      padding: 8px 10px;
     }
   }
 </style>
+
 <script>
   const dataUrl = "{{ '/assets/data/vip_grave_list.txt' | relative_url }}";
 </script>

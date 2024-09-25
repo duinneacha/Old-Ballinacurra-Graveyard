@@ -1,23 +1,8 @@
-document.getElementById('table-view-btn').addEventListener('click', showTableView);
-document.getElementById('map-view-btn').addEventListener('click', showMapView);
-
-// const dataUrl = '/assets/data/vip_graves_list.txt';
-
-function showTableView() {
-    document.getElementById('map-view').style.display = 'none';
-    document.getElementById('table-view').style.display = 'block';
-    loadTableData();
-}
-
-function showMapView() {
-    document.getElementById('map-view').style.display = 'block';
-    document.getElementById('table-view').style.display = 'none';
-}
-
-
+// Ensure the table is shown when the page loads
 document.addEventListener('DOMContentLoaded', function() {
-    showTableView();
-  });
+    loadTableData();
+    setupSearch();
+});
 
 function loadTableData() {
     fetch(dataUrl)
@@ -33,17 +18,19 @@ function loadTableData() {
             const rows = data.split('\n');
             const headers = rows[0].split('\t');
             
-            // Define the indices of the columns we want to include
+            // Define the columns we want to include
             const includedColumns = ['ID', 'Grave Code', 'Surname', 'First Name', 'Died', 'Age', 'Alias', 'Location', 'Gender'];
             const indices = includedColumns.map(col => headers.indexOf(col));
             
             rows.forEach((row, index) => {
+                if (row.trim() === '') return; // Skip empty rows
+                
                 const cols = row.split('\t');
                 const tr = document.createElement('tr');
                 
                 indices.forEach(i => {
                     const cell = index === 0 ? document.createElement('th') : document.createElement('td');
-                    cell.textContent = cols[i];
+                    cell.textContent = cols[i] || ''; // Use empty string if data is undefined
                     tr.appendChild(cell);
                 });
                 
@@ -57,17 +44,20 @@ function loadTableData() {
         });
 }
 
+function setupSearch() {
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const filter = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#graves-table tbody tr');
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('search-input').addEventListener('input', function() {
-        const filter = this.value.toLowerCase();
-        const rows = document.querySelectorAll('#graves-table tbody tr'); // Ensure correct selector
-        // console.log(rows);
-
-        rows.forEach(row => {
-            const cells = row.querySelectorAll('td');
-            const match = Array.from(cells).some(cell => cell.textContent.toLowerCase().includes(filter));
-            row.style.display = match ? '' : 'none';
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const match = Array.from(cells).some(cell => 
+                    cell.textContent.toLowerCase().includes(filter)
+                );
+                row.style.display = match ? '' : 'none';
+            });
         });
-    });
-});
+    }
+}
