@@ -17,11 +17,11 @@ title: Home
 
 <div class="dedication-section">
   <h2>Dedication</h2>
-  <img src="{{ '/assets/imgs/mommabear.png' | relative_url }}" alt="Dedication Image" class="dedication-image">
+  <img src="{{ '/assets/imgs/frankie-devlin.png' | relative_url }}" alt="Dedication Image" class="dedication-image">
   <p>This website is dedicated to the memory of Frankie Devlin (nee Gleeson) of Ballinacurra for her kindness and devotion to her family, friends and for her endearing support to those less fortunate.</p>
   <p>Frankie also ensured the graves of all those buried here shall see sunlight. Her selflessness will always be remembered.</p>
-  <p><em>"Non est ad astra mollis e terris via"</em>
-  <em>"There is no easy way from the earth to the stars"</em>
+  <p><em>"Non est ad astra mollis e terris via"</em></p>
+  <p><em>"There is no easy way from the earth to the stars"</em></p>
   (Seneca, 4 BC-65 AD)</p>
 </div>
 
