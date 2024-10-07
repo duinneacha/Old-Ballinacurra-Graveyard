@@ -22,7 +22,7 @@ title: Home
   <p>Frankie also ensured the graves of all those buried here shall see sunlight. Her selflessness will always be remembered.</p>
   <p><em>"Non est ad astra mollis e terris via"</em></p>
   <p><em>"There is no easy way from the earth to the stars"</em></p>
-  (Seneca, 4 BC-65 AD)</p>
+  <p>(Seneca, 4 BC-65 AD)</p>
 </div>
 
 <style>
