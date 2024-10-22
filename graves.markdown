@@ -20,8 +20,8 @@ show_title: false
     <table id="graves-table">
       <thead>
         <tr>
-          <th>Grave ID</th>
-          <th>Information</th>
+          <!-- <th>Grave ID</th>
+          <th>Information</th> -->
         </tr>
       </thead>
       <tbody>
@@ -33,7 +33,7 @@ show_title: false
 
 <style>
   body {
-    font-family: 'Georgia', serif;
+    /* font-family: 'Georgia', serif; */
     background-color: #f5f5f5;
     color: #333;
   }
@@ -115,6 +115,6 @@ show_title: false
 </style>
 
 <script>
-  const dataUrl = "{{ '/assets/data/vip_grave_list.txt' | relative_url }}";
+  const dataUrl = "{{ '/assets/data/obg_data.json' | relative_url }}";
 </script>
 <script src="{{ '/assets/js/graves.js' | relative_url }}"></script>
