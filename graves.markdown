@@ -15,6 +15,15 @@ show_title: false
   </form>
 </div>
 
+<!-- Modal Structure -->
+<div id="details-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Grave Details</h2>
+        <div id="modal-details"></div>
+    </div>
+</div>
+
 <div id="table-view" class="view">
   <div class="table-container">
     <table id="graves-table">
@@ -33,7 +42,6 @@ show_title: false
 
 <style>
   body {
-    /* font-family: 'Georgia', serif; */
     background-color: #f5f5f5;
     color: #333;
   }
@@ -96,6 +104,88 @@ show_title: false
 
   #graves-table tbody tr:hover {
     background-color: #f1f1f1;
+  }
+
+  /* Modal styling */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Details table styling */
+  .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .details-table th,
+  .details-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  .details-table th {
+    width: 150px;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+
+  /* Image gallery styling */
+  .image-gallery {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .gallery-item {
+    flex: 0 0 200px;
+    max-width: 200px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Ensure modal content doesn't overflow */
+  .modal-content {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
   }
 
   @media screen and (max-width: 768px) {
