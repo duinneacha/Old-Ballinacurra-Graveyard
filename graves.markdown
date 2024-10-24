@@ -24,6 +24,12 @@ show_title: false
     </div>
 </div>
 
+<!-- Image Modal -->
+<div id="image-modal" class="modal">
+    <span class="close image-close">&times;</span>
+    <img class="modal-image-content" id="enlarged-image">
+</div>
+
 <div id="table-view" class="view">
   <div class="table-container">
     <table id="graves-table">
@@ -187,7 +193,39 @@ show_title: false
     overflow-y: auto;
     padding: 20px;
   }
+/* Image modal styling */
+.modal-image-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
+#image-modal {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#image-modal .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.gallery-item {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
   @media screen and (max-width: 768px) {
     .welcome-banner h2 {
       font-size: 1.4em;

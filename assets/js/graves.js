@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     loadTableData();
     setupSearch();
     setupModal();
+    setupImageModal();
+
 });
 
 function loadTableData() {
@@ -82,13 +84,13 @@ function checkForDetails(entry) {
 function createImageGallery(piclist) {
     if (!piclist) return '';
     
-    const imageBasePath = '/assets/imgs/grave-pics/';
+    const imageBasePath = '/Old-Ballinacurra-Graveyard/assets/imgs/grave-pics/';
     const imageNames = piclist.split(',').map(pic => pic.trim());
     
     return `
         <div class="image-gallery">
             ${imageNames.map(imageName => `
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="enlargeImage('${imageBasePath}${imageName}')">
                     <img src="${imageBasePath}${imageName}" 
                          alt="Grave photograph - ${imageName}" 
                          onerror="this.style.display='none'">
@@ -107,10 +109,9 @@ function showEntryDetails(entry) {
         <table class="details-table">
             <tr><th>Name:</th><td>${entry.FirstName || ''} ${entry.Surname || ''}</td></tr>
             ${entry.Died ? `<tr><th>Died:</th><td>${entry.Died}</td></tr>` : ''}
-            ${entry.Code ? `<tr><th>Code:</th><td>${entry.Code}</td></tr>` : ''}
             ${entry.Origin ? `<tr><th>Origin:</th><td>${entry.Origin}</td></tr>` : ''}
-            ${entry['Grid Reference N'] ? `<tr><th>Grid Reference N:</th><td>${entry['Grid Reference N']}</td></tr>` : ''}
-            ${entry['Grid Reference E'] ? `<tr><th>Grid Reference E:</th><td>${entry['Grid Reference E']}</td></tr>` : ''}
+            ${(entry['Grid Reference N'] || entry['Grid Reference E']) ? 
+                `<tr><th>Grid Reference:</th><td>${entry['Grid Reference N'] || ''} ${entry['Grid Reference E'] ? ', ' + entry['Grid Reference E'] : ''}</td></tr>` : ''}
             ${entry.Inscription ? `<tr><th>Inscription:</th><td>${entry.Inscription}</td></tr>` : ''}
             ${entry['Other Information'] ? `<tr><th>Other Information:</th><td>${entry['Other Information']}</td></tr>` : ''}
         </table>
@@ -153,3 +154,38 @@ function setupSearch() {
         });
     }
 }
+
+// Add these new functions
+function enlargeImage(imageSrc) {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('enlarged-image');
+    
+    modal.style.display = "block";
+    modalImg.src = imageSrc;
+    
+    // Stop event propagation to prevent closing the details modal
+    event.stopPropagation();
+}
+
+function setupImageModal() {
+    const modal = document.getElementById('image-modal');
+    const closeBtn = modal.getElementsByClassName('close')[0];
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    modal.onclick = function(e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Add keyboard support for closing
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+        }
+    });
+}
+
