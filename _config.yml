@@ -3,7 +3,7 @@ email: duinneacha@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Information about the graves in the Old Ballinacurra Graveyard.
 
-baseurl: "/Old-Ballinacurra-Graveyard" # the subpath of your site
+baseurl: "" # the subpath of your site
 url: "https://duinneacha.github.io" # the base hostname & protocol for your site
 twitter_username:
 github_username: duinneacha
