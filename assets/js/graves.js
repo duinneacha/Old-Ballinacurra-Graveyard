@@ -84,7 +84,7 @@ function checkForDetails(entry) {
 function createImageGallery(piclist) {
     if (!piclist) return '';
     
-    const imageBasePath = '/Old-Ballinacurra-Graveyard/assets/imgs/grave-pics/';
+    const imageBasePath = '/assets/imgs/grave-pics/';
     const imageNames = piclist.split(',').map(pic => pic.trim());
     
     return `
