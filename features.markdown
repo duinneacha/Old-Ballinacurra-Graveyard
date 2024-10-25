@@ -40,7 +40,7 @@ show_title: false
     <h3>Alko Mulder</h3>
     <div class="feature-content">
         <div class="feature-image">
-            <img src="/Old-Ballinacurra-Graveyard/assets/imgs/alko-2.png" alt="Alko Mulder historical photograph">
+            <img src="/assets/imgs/alko-2.png" alt="Alko Mulder historical photograph">
         </div>
 
         <div class="feature-text">
@@ -63,7 +63,7 @@ show_title: false
             <p>Alko Mulder is buried behind the church, facing Ballyanan. His resting place was one of those recovered when our graveyard was reclaimed from nature. And now, he's been looked after again, with a clean resting place, and a modern headstone facing the path.</p>
 
             <div class="feature-image">
-                <img src="/Old-Ballinacurra-Graveyard/assets/imgs/alko-1.png"
+                <img src="/assets/imgs/alko-1.png"
                      alt="Historical photograph of Alko Mulder">
             </div>
 
@@ -79,11 +79,11 @@ show_title: false
 
             <div class="feature-image-row">
                 <div class="feature-image">
-                    <img src="/Old-Ballinacurra-Graveyard/assets/imgs/alko-3.png"
+                    <img src="/assets/imgs/alko-3.png"
                          alt="Alko Mulder funeral photograph">
                 </div>
                 <div class="feature-image">
-                    <img src="/Old-Ballinacurra-Graveyard/assets/imgs/alko-4.png"
+                    <img src="/assets/imgs/alko-4.png"
                          alt="Alko Mulder funeral photograph">
                 </div>
             </div>
@@ -142,7 +142,7 @@ show_title: false
     
     <div class="feature-content">
         <div class="feature-image">
-            <img src="/Old-Ballinacurra-Graveyard/assets/imgs/ryng-2.png" 
+            <img src="/assets/imgs/ryng-2.png" 
                  alt="Ryng family grave site">
         </div>
 
@@ -152,7 +152,7 @@ show_title: false
             <p>Bobby Ryng (d:1988) was a famed Ballinacurra man who played senior with Carrigtwohill and interestingly lost 3 county finals, he won 2x Munster Colleges and All Ireland Senior and Minor Championships with Cork.</p>
 
             <div class="feature-image">
-                <img src="/Old-Ballinacurra-Graveyard/assets/imgs/ryng-1.jpg"
+                <img src="/assets/imgs/ryng-1.jpg"
                      alt="Historical photograph of Bobby Ryng">
             </div>
         </div>
