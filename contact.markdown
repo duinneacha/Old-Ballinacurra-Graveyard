@@ -55,7 +55,8 @@ We'd love to hear from you! Please fill out the form below to get in touch.
   }
 </style>
 
-<form class="contact-form" action="https://formspree.io/f/xvgpraeb" method="POST">
+<!-- <form class="contact-form" action="https://formspree.io/f/xvgpraeb" method="POST"> -->
+<form class="contact-form" action="https://formspree.io/f/xrbgpgjl" method="POST">
 
 <label for="name">Your Name:</label>
 <input type="text" id="name" name="name" required>
