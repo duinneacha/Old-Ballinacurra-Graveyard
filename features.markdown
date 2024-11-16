@@ -160,13 +160,38 @@ show_title: false
 
 </section>
 
-  <section id="church" class="feature-section">
-    <h3>Church</h3>
-    <!-- Content -->
-  </section>
+<section id="church" class="feature-section">
+    <h3>Ballinacurra Church</h3>
+    
+    <div class="feature-content">
+        <div class="feature-image">
+            <img src="/assets/imgs/obg-church.jpeg" 
+                 alt="Ballinacurra Church ruins">
+        </div>
+
+        <div class="feature-text">
+            <p>As you enter Ballinacurra Graveyard from Church Road, the ruins of the late-medieval church can be seen at the far end of the site, on the right-hand side. The site is known to have been an established ecclesiastical site, long before the current building was erected. It is thought that an earlier church may have occupied the site previously.</p>
+
+            <p>The church was built in and around 1550. It was a simple, single-cell church with steeply-pitched gables, built by hand of local limestone. A lancet window was added to the western gable at a later date. This gable and its beautifully detailed window are in remarkably good condition today, given that the church is at an advanced stage of ruination.</p>
+
+            <h4>Background History</h4>
+            <p>In the late 1100s, brothers Thomas and Robert Des Autres (later known as "Waters") were settled by the Anglo-Norman leader, Robert Fitz Stephen, who held Western Imokilly as his personal estate or Fief. Robert Des Autres built a castle at a place he called "del Core" and which was recorded in an Irish annalistic entry in 1206 as "An Cora".</p>
+
+            <p>Richard de Carew, the illegitimate son of Raymond Le Gros, son of William fitz Gerald of the famous Irish fitz Gerald dynasty, subsequently purchased the des Autres estate in the 1190s. Richard had inherited 30,000 acres of prime land, stretching from Mogeesha to Killeagh, Trabolgan and even parts of the Great Island (Cobh). He made his home at the castle in Ballinacurra which, in Richard's time was known as Castlecorth.</p>
+
+            <p>The de Barrys succeeded the fitz Geralds in power and they, in turn were eventually succeeded by the Geraldines in the1420s. It was during the time of the Geraldine rule that the church was built in Ballinacurra. It would have served as the parish church for the market town of Castlecorth. Midleton town was established much later, in the 18th century, meaning Ballinacurra/Castlecorth was the economic centre of the region at this time.</p>
+
+            <p>However, the 14th century was a tumultuous time; climate deterioration, bubonic plague, famine and civil unrest, coupled with the disinterest of the Barry clan, whose real interest lay much further West caused the decline of colonial market towns. A survey from the late 1560s shows no town or village at Ballinacurra. The church itself is recorded as having been in a ruinous state as early as 1615.</p>
+
+            <p>Ballinacurra church site is also a place of outstanding natural beauty and peace, away from the traffic and noise. It is a lovely spot to sit and watch the birds or watch the seasons change, away from the chaos of life.</p>
+
+            <p>Anne-Marie Kenneally</p>
+        </div>
+    </div>
+
+</section>
 
 <style>
-
 /* Welcome Banner Styles */
 .welcome-banner {
   text-align: center;
@@ -185,6 +210,8 @@ show_title: false
   margin-bottom: 40px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative; /* Ensure nav stays visible */
+  z-index: 10; /* Keep nav above other content */
 }
 
 .nav-container {
@@ -255,15 +282,31 @@ show_title: false
   gap: 30px;
 }
 
+@media screen and (min-width: 768px) {
+  .feature-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .feature-image {
+    flex: 0 0 45%;
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+  
+  .feature-text {
+    flex: 1;
+  }
+}
+
 .feature-image {
-  flex: 0 0 auto;
   max-width: 100%;
   margin-bottom: 20px;
 }
 
 .feature-image img {
   width: 100%;
-  max-height: 500px;
+  max-height: 400px;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -391,33 +434,32 @@ h4 {
   cursor: pointer;
 }
 
-/* Responsive Styles */
-@media screen and (min-width: 768px) {
-  .feature-content {
-    flex-direction: row;
-  }
-}
-
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
-  .nav-item i {
-    display: none;
+  .nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+    gap: 5px;
   }
   
   .nav-item {
     padding: 8px 15px;
     min-width: auto;
+    width: calc(50% - 10px); /* Two items per row with gap */
+    margin: 5px 0;
+  }
+  
+  .nav-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
   }
   
   .nav-item span {
     font-size: 0.9em;
-    margin: 0;
   }
   
-  .nav-container {
-    gap: 10px;
-  }
-
   .feature-image-row {
     flex-direction: column;
     gap: 15px;
@@ -439,6 +481,29 @@ h4 {
   .features-nav {
     padding: 10px 0;
     margin-bottom: 20px;
+    display: block; /* Ensure visibility */
+  }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+  .nav-item {
+    width: 100%; /* Full width on very small screens */
+    margin: 3px 0;
+  }
+  
+  .nav-item i {
+    display: inline-block; /* Keep icons visible */
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+  }
+  
+  .feature-section {
+    padding: 10px;
   }
 }
 </style>
